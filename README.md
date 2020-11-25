@@ -1,6 +1,9 @@
 # Acebook
+Acebook engineering project.
 
-This is a Node.js template for the Acebook engineering project.
+App running on Localhost 3000 - npm start;
+
+==================================
 
 It uses:
 - [Express](https://expressjs.com/) web framework for Node.js.
@@ -13,9 +16,9 @@ It uses:
 
 ## Card wall
 
-REPLACE THIS TEXT WITH A LINK TO YOUR CARD WALL
+https://trello.com/b/ok1PiZf0/acebook-project
 
-## Quickstart
+## Project set-up
 
 ### Install Node.js
 
