@@ -2,7 +2,8 @@
 <ul class="posts">
   {{#each posts}}
   <li>{{this.message}}</li>
+  <form action="/posts" method='delete'><button><a href="/posts">delete post</a></button></form>
   {{/each}}
 </ul>
 
-<a class="new-post-link" href="/posts/new">New post</a>
+<button><a class="new-post-link" href="/posts/new">New post</a></button> 

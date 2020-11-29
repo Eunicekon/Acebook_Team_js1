@@ -22,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // route setup
 app.use('/', homeRouter);
 app.use('/posts', postsRouter);
+// app.use('/delete', deleteRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,4 +1,5 @@
 var Post = require('../models/post');
+const { post } = require('../routes/home');
 
 var PostsController = {
   Index: function(req, res) {
@@ -18,7 +19,24 @@ var PostsController = {
 
       res.status(201).redirect('/posts');
     });
+  },
+
+  exports.deletePost = async (req, res) => {
+    let postID = req.params.id;
+
+    await Posts.deleteOne({_id: postID}, (err, data) =>{
+      if (err) {
+        res.status(500).json({
+          message:
+          "something went wrong!"
+        });
+      } else {
+        res.status(200).json({
+          message: "post deleted!"
+        });
+      }
+    });
   }
-};
+}
 
 module.exports = PostsController;
