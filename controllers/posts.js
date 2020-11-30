@@ -1,4 +1,6 @@
+const mongoose = require("mongoose");
 var Post = require('../models/post');
+
 
 var PostsController = {
   Index: function(req, res) {
@@ -17,6 +19,30 @@ var PostsController = {
       if (err) { throw err; }
 
       res.status(201).redirect('/posts');
+    });
+  },
+  baseRoute: async (re, res) => {
+    res.send('server running');
+  },
+  getPost: async (req, res) => {
+    const posys = await Post.find();
+    res.json(posts);
+  },
+  getSinglePost: async (req, res) => {
+    let postID = req.params.id;
+    await Posts.findById({_id: postID}, (err, data) =>{
+      if (err) {
+        res.status(500).json({
+          message:
+          "something went wrong!",
+        });
+      }else {
+        console.log(data);
+        res.status(200).json({
+          message:"Post found!",
+          data
+        });
+      }
     });
   }
 };
