@@ -1,7 +1,7 @@
 # Acebook
 Acebook engineering project.
 
-<img src="images/social-media-updates.png" height="150" width="150">
+<img src="images/socialMedia.jpeg" height="200" width="200">
 
 App running on Localhost 3000 - npm start;
 
