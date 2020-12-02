@@ -12,6 +12,7 @@ var UserController = {
 
             const user = new User({
                 username: req.body.username,
+                email: req.body.email,
                 password: hash
             })
 
@@ -27,6 +28,10 @@ var UserController = {
             res.redirect('/');
         })
         
-    }
+    },
+
+    Login: function(req, res) {
+        res.render('user/login')
+    },
 };
 module.exports = UserController;
