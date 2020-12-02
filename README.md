@@ -1,6 +1,8 @@
 # Acebook
 Acebook engineering project.
 
+<img src="images/socialMedia.jpeg" height="200" width="200">
+
 App running on Localhost 3000 - npm start;
 
 ==================================
@@ -46,11 +48,11 @@ https://trello.com/b/ok1PiZf0/acebook-project
 1. Install MongoDB
     ```
     brew tap mongodb/brew
-    brew install mongodb-community@4.2
+    brew install mongodb-community@4.4
     ```
 1. Start MongoDB
     ```
-    brew services start mongodb-community@4.2
+    brew services start mongodb-community@4.4
     ```
 
 ### Start
