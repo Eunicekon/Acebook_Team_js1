@@ -1,6 +1,6 @@
 var HomeController = {
   Index: function(req, res) {
-    res.render('home/index', { title: 'Christian' });
+    res.render('home/index');
   }
 
 //   Login: (function(req, res) {
