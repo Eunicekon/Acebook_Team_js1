@@ -38,3 +38,21 @@ describe('Post model', function() {
     });
   });
 });
+
+it('can delete a post', function(done) {
+    var post = new Post({ message: 'some message' });
+
+    post.save(function(err) {
+      expect(err).toBeNull();
+
+      Post.find(function(err, posts) {
+        expect(err).toBeNull();
+
+        post.deleteOne(function(err, posts) {
+          expect(err).toBeNull();
+          expect(posts).toEqual([]);
+          done();
+        });
+      });
+    });
+  });
