@@ -9,11 +9,11 @@ router.get('/', HomeController.Index);
 
 router.post('/', (req,res) => {
     User.findOne({ username: req.body.
-      username}).exec().then(data => {
-      if(!data) {
+      username}).exec().then(item => {
+      if(!item) {
           return res.status(400).send({ message: "Your username or password is incorrect" });
       }
-      if(!bcrypt.compareSync(req.body.password, data.password)) {
+      if(!bcrypt.compareSync(req.body.password, item.password)) {
           return res.status(400).send({ message: "Your username or password is incorrect" });
       }
       res.status(201).redirect('/posts');
@@ -41,4 +41,3 @@ router.post('/', (req,res) => {
 // })
 
 module.exports = router;
-
