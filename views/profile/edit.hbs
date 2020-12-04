@@ -1,0 +1,13 @@
+<h1 class="title">{{title}}</h1>
+<h3 class="header">{{header}}</h3>
+
+<form id="edit-profile" action="/" method="post">
+First Name: <input id="firstName" type="text" name="firstName" value={{firstName}}></input><br>
+Last Name: <input type="text" name="lastName" placeholder="{{this.lastName}}"></input><br>
+Username: <input id="username" type="text" name="username" placeholder="{{this.username}}"></input><br>
+Email Address: <input type="text" name="email" placeholder="{{this.email}}"></input><br>
+Description: <textarea name="description" id="description" value= "" cols="30" rows="10">Enter a text... </textarea><br>
+Location: <input type="text" name="location" placeholder="{{this.location}}"></input><br>
+<button class = "button"><a href="/profile">Save Profile</a></button>
+</form>
+<p class="firstName">{{firstName}}</p>

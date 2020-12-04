@@ -11,10 +11,10 @@ router.post('/', (req,res) => {
     User.findOne({ username: req.body.
       username}).exec().then(item => {
       if(!item) {
-          return res.status(400).send({ message: "Your username or password is incorrect" });
+        res.status(400).redirect('/');
       }
       if(!bcrypt.compareSync(req.body.password, item.password)) {
-          return res.status(400).send({ message: "Your username or password is incorrect" });
+        res.status(400).redirect('/');
       }
       res.status(201).redirect('/posts');
     }
