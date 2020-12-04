@@ -1,10 +1,14 @@
 var Post = require('../models/post');
+var User = require('../models/user');
 
 var PostsController = {
   Index: function(req, res) {
-    Post.find(function(err, posts) {
-      if (err) { throw err; }
+    console.log(req.session.user_id); //is currently undefined
+    if (req.session.user_id == null) {
+      return res.redirect('/');
+    } 
 
+    Post.find(function(err, posts) {
       res.render('posts/index', { posts: posts });
     });
   },
@@ -18,7 +22,7 @@ var PostsController = {
     post.save(function(err) {
       if (err) { throw err; }
 
-      res.status(201).redirect('/posts');
+      res.redirect('/posts');
     });
   },
 
@@ -31,15 +35,7 @@ var PostsController = {
       }
       res.send("Successfully deleted post!");
     });
-  },
-
-    // Post.find(function(err, posts) {
-    //   var post = new Post(req.body);
-    //   post.delete(function(err) {
-    //     if (err) { throw err; }
-    //     res.render('posts/index', { posts: posts });
-    //   });
-    // });
+  }
  
 };
 
