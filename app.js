@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require("body-parser");
+var session = require('express-session');
 
 
 var homeRouter = require('./routes/home');
@@ -12,9 +13,6 @@ var userRouter = require('./routes/user');
 var profileRouter = require('./routes/profile');
 
 var app = express();
-
- //middleware
- app.use(bodyParser.json());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -25,6 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({secret: 'notagoodsecret',resave:false,saveUnitialized:false}));
 
 // route setup
 app.use('/', homeRouter);
@@ -47,5 +46,6 @@ app.use(function(err, req, res) {
   res.status(err.status || 500);
   res.render('error');
 });
+console.log(app._router.stack)
 
 module.exports = app;

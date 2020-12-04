@@ -16,10 +16,13 @@ var UserController = {
                 password: hash
             })
 
-            user.save(function(err) {
-                if (err) { console.log(err) }
-                console.log ("Sign up successful.");
+            user.save(function(err, doc) {
+                if (err) return console.error(err);
+                // console.log(user);
               });
+              
+            req.session.user_id = user._id;
+            // console.log(req.session.user_id)
 
             if (err) {
                 console.log(err)
@@ -29,5 +32,11 @@ var UserController = {
         })
         
     },
+
+    Logout: function(req, res){
+        console.log(req.session.user_id)
+        req.session.user_id = null;
+        res.redirect('/');
+      }
 };
 module.exports = UserController;
