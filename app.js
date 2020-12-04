@@ -3,7 +3,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
 var homeRouter = require('./routes/home');
 var postsRouter = require('./routes/posts');
 var usersRouter = require('./routes/user');
@@ -39,5 +38,6 @@ app.use(function(err, req, res) {
   res.status(err.status || 500);
   res.render('error');
 });
+console.log(app._router.stack)
 
 module.exports = app;

@@ -4,6 +4,7 @@ Acebook engineering project.
 App running on Localhost 3000 - npm start;
 
 ==================================
+
 It uses:
 - [Express](https://expressjs.com/) web framework for Node.js.
 - [Nodemon](https://nodemon.io/) to reload the server automatically.
@@ -15,7 +16,7 @@ It uses:
 
 ## Card wall
 
-https://trello.com/b/o7P59asd/js-engineering-project
+https://trello.com/b/ok1PiZf0/acebook-project
 
 ## Project set-up
 
@@ -45,11 +46,11 @@ https://trello.com/b/o7P59asd/js-engineering-project
 1. Install MongoDB
     ```
     brew tap mongodb/brew
-    brew install mongodb-community@4.2
+    brew install mongodb-community@4.4
     ```
 1. Start MongoDB
     ```
-    brew services start mongodb-community@4.2
+    brew services start mongodb-community@4.4
     ```
 
 ### Start

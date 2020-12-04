@@ -8,9 +8,11 @@ var PostsController = {
       res.render('posts/index', { posts: posts });
     });
   },
+
   New: function(req, res) {
     res.render('posts/new', {});
   },
+
   Create: function(req, res) {
     var post = new Post(req.body);
     post.save(function(err) {
@@ -18,7 +20,27 @@ var PostsController = {
 
       res.status(201).redirect('/posts');
     });
-  }
+  },
+
+  Delete: function(req, res){
+    var post = new Post(req.body);
+    var id = req.body.id;
+    post.deleteOne({_id : id}, function(err){
+      if(err) { 
+        throw err; 
+      }
+      res.send("Successfully deleted post!");
+    });
+  },
+
+    // Post.find(function(err, posts) {
+    //   var post = new Post(req.body);
+    //   post.delete(function(err) {
+    //     if (err) { throw err; }
+    //     res.render('posts/index', { posts: posts });
+    //   });
+    // });
+ 
 };
 
 module.exports = PostsController;
