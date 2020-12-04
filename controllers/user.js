@@ -27,7 +27,14 @@ var UserController = {
             // res.send(hash)
             res.redirect('/');
         })
+<<<<<<< HEAD
+
+    },
+};
+module.exports = UserController;
+=======
         
     },
 };
 module.exports = UserController;
+>>>>>>> master
