@@ -1,6 +1,12 @@
 <<<<<<< HEAD
 
 body {
+<<<<<<< HEAD
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* background: url('/images/Social-Media-Usage.png');
+  background-size: cover; */
+=======
     --color-primary: #009579;
     --color-primary-dark: #007f67;
     --color-secondary: #252c6a;
@@ -112,12 +118,16 @@ body {
 
 .form__button:hover {
     background: var(--color-primary-dark);
+>>>>>>> master
 }
 
 .form__button:active {
     transform: scale(0.98);
 }
 
+<<<<<<< HEAD
+/* .form {
+=======
 .form__text {
     text-align: center;
 }
@@ -272,6 +282,7 @@ input {
   left: 75%;
   width: 50%;
   transition: 1s 0.7s ease-in-out;
+>>>>>>> master
   display: grid;
   grid-template-columns: 1fr;
   z-index: 5;
@@ -280,6 +291,10 @@ input {
 form {
   display: flex;
   align-items: center;
+<<<<<<< HEAD
+  justify-content: end;
+} */
+=======
   justify-content: center;
   flex-direction: column;
   padding: 0rem 5rem;
@@ -637,3 +652,4 @@ form.sign-in-form {
   }
 >>>>>>> master
 }
+>>>>>>> master

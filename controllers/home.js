@@ -25,7 +25,7 @@ var HomeController = {
 //     const {username, password } = req.body;
 //     const user = User.findOne({ username });
 //     const validPassword = bcrypt.compare(password, user.password);
-    
+
 //     if(validPassword) {
 //         res.send('WELCOME');
 //     } else {

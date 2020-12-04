@@ -9,7 +9,8 @@ var session = require('express-session');
 
 var homeRouter = require('./routes/home');
 var postsRouter = require('./routes/posts');
-var usersRouter = require('./routes/user');
+var userRouter = require('./routes/user');
+var profileRouter = require('./routes/profile');
 
 var app = express();
 
@@ -27,7 +28,9 @@ app.use(session({secret: 'notagoodsecret',resave:false,saveUnitialized:false}));
 // route setup
 app.use('/', homeRouter);
 app.use('/posts', postsRouter);
-app.use('/users', usersRouter);
+app.use('/signup', userRouter);
+app.use('/profile', profileRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
