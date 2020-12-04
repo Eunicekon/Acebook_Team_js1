@@ -1,11 +1,10 @@
 const User = require("../models/user");
 const bcrypt = require('bcrypt');
-
 var HomeController = {
   Index: function(req, res) {
     res.render('home/index');
-  },
 
+  },
  Login: function(req,res) {
   const user = User.findOne({ username: req.body.username})
   user.exec().then(data => {
@@ -19,5 +18,17 @@ var HomeController = {
     }
     )}
   };
-
   module.exports = HomeController;
+
+
+//   Login: (function(req, res) {
+//     const {username, password } = req.body;
+//     const user = User.findOne({ username });
+//     const validPassword = bcrypt.compare(password, user.password);
+    
+//     if(validPassword) {
+//         res.send('WELCOME');
+//     } else {
+//         res.send('Try again!');
+//     }
+// })

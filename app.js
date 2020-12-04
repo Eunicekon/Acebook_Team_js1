@@ -9,12 +9,9 @@ var session = require('express-session');
 
 var homeRouter = require('./routes/home');
 var postsRouter = require('./routes/posts');
-var userRouter = require('./routes/user');
+var usersRouter = require('./routes/user');
 
 var app = express();
-
- //middleware
- app.use(bodyParser.json());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,8 +27,7 @@ app.use(session({secret: 'notagoodsecret',resave:false,saveUnitialized:false}));
 // route setup
 app.use('/', homeRouter);
 app.use('/posts', postsRouter);
-app.use('/signup', userRouter);
-
+app.use('/users', usersRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -47,5 +43,6 @@ app.use(function(err, req, res) {
   res.status(err.status || 500);
   res.render('error');
 });
+console.log(app._router.stack)
 
 module.exports = app;
