@@ -13,6 +13,9 @@ var PostSchema = new mongoose.Schema({
   description: {
   type: String
   },
+  // date: {
+  //   type: Date
+  // },
 });
 
 var Post = mongoose.model('Post', PostSchema);

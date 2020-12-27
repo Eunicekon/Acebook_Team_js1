@@ -18,7 +18,12 @@ var PostsController = {
 
       res.status(201).redirect('/posts');
     });
-  }
+  },
+//   Date: function(){
+//     var timeObject = new Date();
+//     timeObject.setTime(timeObject.getTime() + 1000 * 60);
+//     return timeObject;
+// }
 };
 
 module.exports = PostsController;
