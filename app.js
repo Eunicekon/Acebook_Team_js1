@@ -3,9 +3,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var bodyParser = require("body-parser");
-var session = require('express-session');
-
 
 var homeRouter = require('./routes/home');
 var postsRouter = require('./routes/posts');
@@ -13,6 +10,7 @@ var userRouter = require('./routes/user');
 var profileRouter = require('./routes/profile');
 
 var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

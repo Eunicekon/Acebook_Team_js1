@@ -35,8 +35,6 @@ var PostsController = {
       }
       res.send("Successfully deleted post!");
     });
-  }
- 
 };
 
 module.exports = PostsController;
