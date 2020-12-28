@@ -21,3 +21,4 @@ var PostSchema = new mongoose.Schema({
 var Post = mongoose.model('Post', PostSchema);
 
 module.exports = Post;
+
